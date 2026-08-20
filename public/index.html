@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Clientes - AWS Cloud</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Sistema de Gestión de Clientes</h2>
+        
+        <!-- Alerta para la prueba del Load Balancer -->
+        <div class="alert alert-info text-center" role="alert">
+            <strong>Tráfico atendido por la instancia: </strong> <span id="server-info">Cargando...</span>
+        </div>
+
+        <div class="row">
+            <!-- Formulario de Registro -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Registrar Nuevo Cliente</h5>
+                        <form id="form-cliente">
+                            <div class="mb-3">
+                                <label>Nombre</label>
+                                <input type="text" id="nombre" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label>Correo</label>
+                                <input type="email" id="correo" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label>Teléfono</label>
+                                <input type="text" id="telefono" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Registrar Cliente</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel de Búsqueda y Resultados -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Consultar Clientes</h5>
+                        <button onclick="cargarClientes()" class="btn btn-success w-100 mb-3">Refrescar Lista</button>
+                        <ul id="lista-clientes" class="list-group">
+                            <!-- Los clientes aparecerán aquí -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
